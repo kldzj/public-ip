@@ -9,12 +9,33 @@
     />
 
     <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --container-bg: #f8f9fa;
+        --tooltip-bg: #555;
+        --tooltip-color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #121212;
+          --text-color: #e0e0e0;
+          --container-bg: #1e1e1e;
+          --tooltip-bg: #424242;
+          --tooltip-color: #f0f0f0;
+        }
+      }
+
       body {
         font-family: Arial, sans-serif;
         display: grid;
         place-items: center;
         height: 100vh;
         margin: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
       .container {
@@ -22,7 +43,6 @@
         flex-direction: column;
         align-items: center;
         gap: 4px;
-        padding: 20px;
       }
 
       .ip-entry {
@@ -33,7 +53,7 @@
 
       .ip-address {
         font-family: "Noto Sans Mono", monospace;
-        color: #333;
+        color: var(--text-color);
       }
 
       .v4 {
@@ -77,8 +97,8 @@
       .status-tooltip .tooltip-text {
         visibility: hidden;
         width: 140px;
-        background-color: #555;
-        color: #fff;
+        background-color: var(--tooltip-bg);
+        color: var(--tooltip-color);
         text-align: center;
         border-radius: 6px;
         padding: 5px;
