@@ -2,7 +2,7 @@
 
 A lightweight service that displays your server's public IPv4 and IPv6 addresses. Access your IP information through a clean web interface or via JSON endpoints.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Features
@@ -50,7 +50,7 @@ docker pull ghcr.io/kldzj/public-ip:latest
 docker run -p 3000:3000 ghcr.io/kldzj/public-ip:latest
 
 # Or use a specific version
-docker run -p 3000:3000 ghcr.io/kldzj/public-ip:1.0.0
+docker run -p 3000:3000 ghcr.io/kldzj/public-ip:1.1.0
 ```
 
 ## API Endpoints
