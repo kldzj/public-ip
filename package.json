@@ -1,0 +1,26 @@
+{
+  "name": "@kldzj/public-ip",
+  "version": "0.0.0",
+  "description": "A server that just displays the host's public ip address",
+  "main": "dist/index.js",
+  "repository": "https://github.com/kldzj/public-ip",
+  "author": "Nikolai Kolodziej <github@kldzj.dev>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "cp -r src/views dist/views",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "async-mutex": "^0.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

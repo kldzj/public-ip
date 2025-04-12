@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>IPv4 and IPv6 Addresses</title>
+    <meta http-equiv="refresh" content="<%= refreshInterval %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A server that just displays the host's public ip address"
+    />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .ip-address {
+        font-family: "Noto Sans Mono", monospace;
+        color: #333;
+      }
+
+      .v4 {
+        font-size: 2.5em;
+        font-weight: 700;
+      }
+
+      .v6 {
+        font-size: 1.25em;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ip-address v4"><%= ipv4Address %></div>
+      <div class="ip-address v6"><%= ipv6Address %></div>
+    </div>
+  </body>
+</html>
