@@ -1,9 +1,11 @@
 # Public IP
 
-A lightweight service that displays your server's public IPv4 and IPv6 addresses. Access your IP information through a clean web interface or via JSON endpoints.
-
 ![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
+A lightweight service that displays your server's public IPv4 and IPv6 addresses. Access your IP information through a clean web interface or via JSON endpoints.
+
+![Screenshot](.github/screenshot.png)
 
 ## Features
 
