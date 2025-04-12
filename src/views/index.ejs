@@ -22,6 +22,13 @@
         flex-direction: column;
         align-items: center;
         gap: 4px;
+        padding: 20px;
+      }
+
+      .ip-entry {
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
       .ip-address {
@@ -38,12 +45,85 @@
         font-size: 1.25em;
         font-weight: 500;
       }
+
+      .status-indicator {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+      }
+
+      .status-indicator.small {
+        width: 12px;
+        height: 12px;
+      }
+
+      .status-ok {
+        background-color: #4caf50;
+      }
+
+      .status-warning {
+        background-color: #ffc107;
+      }
+
+      .status-error {
+        background-color: #f44336;
+      }
+
+      .status-tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .status-tooltip .tooltip-text {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -70px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px;
+      }
+
+      .status-tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="ip-address v4"><%= ipv4Address %></div>
-      <div class="ip-address v6"><%= ipv6Address %></div>
+      <div class="ip-entry">
+        <div class="status-tooltip">
+          <div class="status-indicator status-<%= ipv4Status %>"></div>
+          <span class="tooltip-text">
+            <% if (ipv4Status === 'ok') { %> IPv4 connection is working
+            correctly <% } else if (ipv4Status === 'warning') { %> IPv4
+            connection has intermittent issues <% } else { %> IPv4 connection is
+            down <% } %>
+          </span>
+        </div>
+        <div class="ip-address v4"><%= ipv4Address %></div>
+      </div>
+      <div class="ip-entry">
+        <div class="status-tooltip">
+          <div class="status-indicator small status-<%= ipv6Status %>"></div>
+          <span class="tooltip-text">
+            <% if (ipv6Status === 'ok') { %> IPv6 connection is working
+            correctly <% } else if (ipv6Status === 'warning') { %> IPv6
+            connection has intermittent issues <% } else { %> IPv6 connection is
+            down <% } %>
+          </span>
+        </div>
+        <div class="ip-address v6"><%= ipv6Address %></div>
+      </div>
     </div>
   </body>
 </html>
